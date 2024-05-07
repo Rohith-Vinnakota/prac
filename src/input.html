@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <script src="https://kit.fontawesome.com/cf91e3a567.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Diphylleia&family=Great+Vibes&family=Luckiest+Guy&family=Protest+Riot&display=swap');
+
+
+        :where(.nav, .itemcontent, .error) {
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+        .cartitems1 {
+            display: flex;
+        }
+
+        .hero-content {
+            font-family: 'Luckiest Guy', cursive;
+        }
+
+        .scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        :is(.logo, .head) {
+            font-family: 'Great Vibes', cursive;
+
+        }
+    </style>
+    <title> 🍱 Restaurant 🍔</title>
+</head>
+
+<body>
+    <div class="main min-h-dvh w-full bg-[#F5F5F5] box-border relative flex flex-col">
+        <!-- Nav Bar -->
+        <div class="nav flex flex-row bg-orange-500 min-h-14 items-center justify-between px-5 text-xl ">
+            <div class="logo text-3xl text-white ">LB Kichen</div>
+            <div type="button" onclick="addcart1()"
+                class="button text-white text-xl p-1 rounded-md cursor-pointer hover:text-gray-200 hover:bg-orange-600">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div> 
+        
+        <!-- head image  -->
+        <div
+            class="head-image flex justify-center items-center w-full h-[500px] bg-[url('../dist/Image/Emilio_Pandika___IMG_7973_HDR.20.jpg')] bg-cover relative bg-center">
+            <div class="overlayy bg-gradient-to-r from-gray-500 to-gray-500 w-full h-full opacity-25 absolute "></div>
+            <p class="text-white text-3xl lg:text-[50px] hero-content  text-center">
+                Food is like a language, it communicates so much.
+            </p>
+        
+        </div>
+        <!-- Search Bar -->
+        <div class="search  w-full flex flex-row mt-12 justify-center">
+            <input type="search" name="search-value" id="searchId" value="" placeholder="Search"
+                class=" h-11 px-3 w-3/5 lg:w-1/4 border-2 rounded-lg border-gray-600 mr-2 border-solid tracking-wide">
+            <div onclick="retreiveData()" type="button"
+                class="button1 cursor-pointer border-2 border-orange-500 border-solid p-1 w-1/4 lg:w-1/12 rounded-lg text-center bg-orange-500 text-white hover:bg-orange-400">
+                Search</div>
+        </div>
+        <!-- Content display -->
+        <div class="container2 pt-3 flex flex-col">
+            <p class=" text-[40px] lg:text-[50px] text-center head text-orange-600">Food Items</p>
+            <div id="fooditems" class="box-border">
+                <ul id="ul"
+                    class=" grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 py-6 px-6 sm:px-16 lg:px-24">
+
+                </ul>
+            </div>
+        </div>
+        <!-- Cart -->
+        <div id="cartitems"
+            class=" scrollbar px-2 hidden lg:right-0 lg:w-[400px] w-full cartitems absolute h-full top-14 max-h-[80dvh] shadow-2xl rounded-es-xl bg-gray-100    flex-col justify-between overflow-y-scroll pb-6">
+            <!-- Cart Items -->
+            <ul class="w-full  grid grid-cols-1 gap-2 py-2" id="cardorder">
+
+
+            </ul>
+            <!-- After Cart Buy -->
+            <div class="buy grid grid-flow-col sticky bottom-0 w-full gap-1 ">
+                <button type="button " onclick="addcart1()"
+                    class=" bg-black text-white p-2 rounded-md col-span-2">Close</button>
+                <button type="button" class=" bg-green-500 text-white p-2 rounded-md col-span-2">Order</button>
+            </div>
+        </div>
+    </div>
+    <script src="./input.js"></script>
+</body>
+
+</html>
